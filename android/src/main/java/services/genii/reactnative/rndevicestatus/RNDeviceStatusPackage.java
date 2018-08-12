@@ -1,19 +1,21 @@
 
-package my.fin;
+package services.genii.reactnative.rndevicestatus;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
-import com.facebook.react.bridge.JavaScriptModule;
-public class RNIsDeviceRootedPackage implements ReactPackage {
+
+
+public class RNDeviceStatusPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-      return Arrays.<NativeModule>asList(new RNIsDeviceRootedModule(reactContext));
+      return Arrays.<NativeModule>asList(new RNDeviceStatusModule(reactContext));
     }
 
     @Override

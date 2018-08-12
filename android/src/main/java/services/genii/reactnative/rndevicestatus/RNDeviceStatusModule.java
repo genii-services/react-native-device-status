@@ -1,33 +1,33 @@
 
-package my.fin;
+package services.genii.reactnative.rndevicestatus;
 
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Promise;
-import java.io.File;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
-import android.content.Context;
 import android.app.KeyguardManager;
+import android.content.Context;
 
 
-public class RNIsDeviceRootedModule extends ReactContextBaseJavaModule {
+public class RNDeviceStatusModule extends ReactContextBaseJavaModule {
 
 	private final ReactApplicationContext reactContext;
 
-	public RNIsDeviceRootedModule(ReactApplicationContext reactContext) {
-	super(reactContext);
-	this.reactContext = reactContext;
+	public RNDeviceStatusModule(ReactApplicationContext reactContext) {
+		super(reactContext);
+		this.reactContext = reactContext;
 	}
 
 	@Override
 	public String getName() {
-	return "RNIsDeviceRooted";
+		return "RNDeviceStatus";
 	}
 
 	@ReactMethod
-	public void isDeviceRooted(Promise promise) {
+	public void isRooted(Promise promise) {
 		try {
 			boolean isRooted = checkRootMethod1() || checkRootMethod2() || checkRootMethod3() || canExecuteSu();
 			promise.resolve(isRooted);
@@ -38,7 +38,7 @@ public class RNIsDeviceRootedModule extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
-	public void isDeviceLocked(Promise promise) {
+	public void isLocked(Promise promise) {
 		try {
 			boolean isLocked = isLockScreenDisabled();
 			promise.resolve(isLocked);

@@ -1,4 +1,4 @@
-#RNIsDeviceRooted
-target "RNIsDeviceRooted" do
+#RNDeviceStatus
+target "RNDeviceStatus" do
 pod 'UIDevice-PasscodeStatus', '~> 0.0.2'
 end

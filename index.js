@@ -1,6 +1,5 @@
+import { NativeModules } from "react-native"
 
-import { NativeModules } from 'react-native';
+const { RNDeviceStatus } = NativeModules
 
-const { RNIsDeviceRooted } = NativeModules;
-
-export default RNIsDeviceRooted;
+export default RNDeviceStatus
